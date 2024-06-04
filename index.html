@@ -74,11 +74,13 @@
             const btnNoRect = btnNo.getBoundingClientRect();
             const maxX = bodyRect.width - btnNoRect.width;
             const maxY = bodyRect.height - btnNoRect.height;
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
-            btnNo.style.position = 'absolute';
-            btnNo.style.left = `${randomX}px`;
-            btnNo.style.top = `${randomY}px`;
+            setInterval(() => {
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+                btnNo.style.position = 'absolute';
+                btnNo.style.left = `${randomX}px`;
+                btnNo.style.top = `${randomY}px`;
+            }, 500); // Modifica el valor de intervalo si lo deseas
         });
 
         btnSi.addEventListener('click', function() {
